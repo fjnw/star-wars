@@ -56,7 +56,12 @@ app.get("/", function(req, res) {
 
 // Get all characters
 app.get("/all", function(req, res) {
-  res.json(characters);
+  //res.json(characters);
+
+  res.sendFile(path.join(__dirname, "view.html"));
+  $("#section1").css("display","none");
+  $("#section2").css("display","none");
+
 });
 
 // Search for Specific Character (or all characters) - provides JSON
@@ -89,6 +94,7 @@ app.post("/api/new", function(req, res) {
   // We then display the JSON to the users
   res.json(newcharacter);
 });
+
 
 // Starts the server to begin listening
 // =============================================================
