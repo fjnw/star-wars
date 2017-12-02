@@ -58,10 +58,7 @@ app.get("/", function(req, res) {
 app.get("/all", function(req, res) {
   //res.json(characters);
 
-  res.sendFile(path.join(__dirname, "view.html"));
-  $("#section1").css("display","none");
-  $("#section2").css("display","none");
-
+  res.sendFile(path.join(__dirname, "table.html"));
 });
 
 // Search for Specific Character (or all characters) - provides JSON
